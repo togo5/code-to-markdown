@@ -1,0 +1,26 @@
+{
+	"permissions": {
+		"allow": ["Bash(bun run:*)"]
+	},
+	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Write|Edit",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bun run format"
+					},
+          {
+            "type": "command",
+            "command": "bun run lint"
+          },
+          {
+            "type": "command",
+            "command": "bun run check"
+          }
+				]
+			}
+		]
+	}
+}
